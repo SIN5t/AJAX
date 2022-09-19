@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AJAX.iml" filepath="$PROJECT_DIR$/.idea/AJAX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/代码/a/a.iml" filepath="$PROJECT_DIR$/代码/a/a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/代码/ajax/ajax.iml" filepath="$PROJECT_DIR$/代码/ajax/ajax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/代码/ajax-autocomplete/ajax-autocomplete.iml" filepath="$PROJECT_DIR$/代码/ajax-autocomplete/ajax-autocomplete.iml" />
+      <module fileurl="file://$PROJECT_DIR$/代码/ajax-encoding/ajax-encoding.iml" filepath="$PROJECT_DIR$/代码/ajax-encoding/ajax-encoding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/代码/b/b.iml" filepath="$PROJECT_DIR$/代码/b/b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code/code.iml" filepath="$PROJECT_DIR$/code/code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/代码/fastjson/fastjson.iml" filepath="$PROJECT_DIR$/代码/fastjson/fastjson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/代码/httpclient/httpclient.iml" filepath="$PROJECT_DIR$/代码/httpclient/httpclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/代码/old-request/old-request.iml" filepath="$PROJECT_DIR$/代码/old-request/old-request.iml" />
+    </modules>
+  </component>
+</project>
