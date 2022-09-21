@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送ajax get请求</title>
+</head>
+<body>
+<script type="text/javascript">
+    window.onload = function (){
+        document.getElementById("btn1").onclick = function (){
+            //发送ajax get请求
+            //第一步：获取核心对象
+            var xhr = new XMLHttpRequest();
+            //第二步，注册回调函数
+            xhr.onreadystatechange = function (){
+                if (this.readyState == 4){
+                    if (xhr.status == 200){
+                        //程序正常,现在想让servlet中的out.print（）服务器响应的内容显示到div中
+                        /*
+                         通过XMLHttpRequest对象的responseText属性可以获取到服务器响应回来的内容。
+                        并且不管服务器响应回来的是什么，都以普通文本的形势获取。（服务器可能响应回来：普通文本、XML、JSON、HTML...）
+                         innerHTML属性是javascript中的语法，和ajax的XMLHttpRequest对象无关。
+                         innerHTML可以设置元素内部的HTML代码。（innerHTML可以将后面的内容当做一段HTML代码解释并执行）
+                         */
+                        document.getElementById("div1").innerHTML = xhr.responseText;
+                    }else {
+                        alert(this.status);
+                    }
+                }
+            }
+            //第三步:开启通道
+            var username = document.getElementById("username1").value;
+            var pwd = document.getElementById("pwd1").value;
+            xhr.open("Get","/ajax01/ajaxServlet02?username="+username+"&pwd="+pwd+"",true);
+
+            //之前的错因！字符串里面不能又空格！！！
+            //xhr.open("Get","/ajax01/ajaxServlet02?username = "+username+"&pwd = "+pwd+"",true);
+
+            //第四步：发送
+            xhr.send();
+
+        }
+
+    }
+</script>
+
+用户名<input type="text" name="username" id="username1"><br>
+密码<input type="password" name="pwd" id="pwd1"><br>
+<input type="button" value="发送ajax get请求" id="btn1">
+<div id="div1"></div>
+</body>
+</html>

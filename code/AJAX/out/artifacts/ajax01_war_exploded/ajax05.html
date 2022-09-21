@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX POST请求验证用户名是否可用</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("username").onfocus = function (){
+                document.getElementById("span").innerText = "";
+            }
+            document.getElementById("username").onblur = function () {
+                //之前提交post是onclick而已，灵活一些
+                //一旦光标离开，就发送ajax请求给后端，后端连接数据库进行查询
+                //1、获取ajax核心对象
+                var xhr = new XMLHttpRequest();
+                //2、回调函数，onreadyStateChange
+                xhr.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            document.getElementById("span").innerHTML = this.responseText;
+                        }else {
+                            alert(this.status)
+                        }
+                    }
+                }
+                //3、open 连接通道
+                xhr.open("post", "/ajax01/ajaxServlet05", true);
+                //4、post请求需要设置的内容，还有最后发送
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                var username = document.getElementById("username").value;
+                xhr.send("username=" + username);
+            }
+        }
+    </script>
+
+    用户名<input type="text" id="username" name="username">
+    <span id="span"></span>
+
+</body>
+</html>

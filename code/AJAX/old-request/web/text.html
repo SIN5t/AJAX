@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>先能看懂下面这个代码，再学习AJAX。</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function salHello(){
+        window.alert("salHello botton was clicked!")
+    }
+</script>
+<!--需求：页面上有一个按钮，用户点击按钮之后，执行一段JS代码。-->
+<input type="button" value="salHello" onclick="salHello()">
+
+<!--以上的实现方式，当然，大家都是没有问题的，但是通过JS代码给按钮绑定事件，这个你会吗？-->
+<input type="button" value="salHello again" id="button2">
+<script type="text/javascript">
+    window.onload = function (){
+        // 获取id="button2"的对象
+        var helloBtn2 = document.getElementById("button2");
+
+        // 给id="helloBtn"元素绑定click事件
+        // 这个function也是一个回调函数，这个回调函数什么时候执行？
+        // 当helloBtn被click的时候，被鼠标单击的时候，这个回调函数会执行。
+        // 鼠标单击五次，这个回调函数就会被调用五次
+        helloBtn2.onclick = function (){
+            alert("js代码给按钮绑定事件")
+            //alert(this)
+            // 这个回调函数中的this是谁呢？
+            // this是发生事件的事件源对象。是按钮发生了鼠标单击，那么this代表的就是这个按钮对象。
+            alert(this.value)
+        }
+
+    }
+</script>
+
+</body>
+</html>
